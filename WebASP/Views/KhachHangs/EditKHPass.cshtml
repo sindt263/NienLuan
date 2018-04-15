@@ -1,0 +1,56 @@
+﻿@model WebASP.Models.KhachHang
+
+@{
+    ViewBag.Title = "EditKHPass";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
+}
+
+<h2>EditKHPass</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>KhachHang</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MaKH)
+    @Html.HiddenFor(model => model.EmailKH)
+    @Html.HiddenFor(model => model.TenKH)
+    @Html.HiddenFor(model => model.TaiKhoanKH)
+    @Html.HiddenFor(model => model.DiaChiKH)
+    @Html.HiddenFor(model => model.SDTKH)
+    @Html.HiddenFor(model => model.GioiTinhKH)
+    @WebASP.Models.Common.Alert
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="MatKhauKH">MẬT KHẨU</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line password" data-val="true" data-val-length="The field MẬT KHẨU must be a string with a maximum length of 20." data-val-length-max="20" id="MatKhauKH" name="MatKhauKH" type="password" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="MatKhauKH" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="XNMatKhauKH">XÁC NHẬN LẠI</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line password" id="XNMatKhauKH" name="XNMatKhauKH" type="password" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="MatKhauKH" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "IndexKH")
+</div>

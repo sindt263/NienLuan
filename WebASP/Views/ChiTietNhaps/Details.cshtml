@@ -1,0 +1,43 @@
+﻿@model WebASP.Models.ChiTietNhap
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietNhap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Mã chi tiết</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCTNhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanPham.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.SerialNumber)
+        </dd>
+
+        <dt>
+            <b>Giá nhập</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaNhap)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCTNhap }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

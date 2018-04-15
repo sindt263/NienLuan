@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebASP.Models.DonHang>
+
+@{
+    ViewBag.Title = "DetailsKH";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
+}
+
+<h2>DetailsKH</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhThucThanhToan.TenHTTT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.MaLoaiNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThaiDonHang.TenTT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayMua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GhiChuDonHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongCT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhThucThanhToan.TenHTTT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachHang.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhanVien.MaLoaiNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThaiDonHang.TenTT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayMua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChuDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongCT)
+            </td>
+            <td>
+                <input type="button" id="DDCT" value="Chi tiết" />
+                @*<input type="checkbox" id="DDCT" />Lập chi tiết*@
+            </td>
+
+        </tr>
+        <div class="result"></div>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $('#DDCT').click(function () {
+                $.ajax({
+                type: 'GET',
+                url: '@Url.Action("DetailsKH", "ChiTietDonHangs", new { id = item.MaDonHang })',
+                success: function (result) {
+                    $('.result').html(result)
+                }
+             })
+            })
+
+
+        })
+        </script>
+    }
+
+
+
+
+
+</table>

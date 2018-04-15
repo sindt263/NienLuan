@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebASP.Models.KhachHang>
+
+@{
+    ViewBag.Title = "IndexKH";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
+}
+
+<h2>IndexKH</h2>
+@WebASP.Models.Common.Alert
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaiKhoanKH)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDTKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinhKH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoanKH)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinhKH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditKH", new { id = item.MaKH })
+            <a href="/DonHangs/DetailsKH/@item.MaKH">Số hàng đã mua</a>
+
+        </td>
+    </tr>
+}
+
+</table>

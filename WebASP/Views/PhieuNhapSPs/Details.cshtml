@@ -1,0 +1,59 @@
+﻿@model WebASP.Models.PhieuNhapSP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Phiếu nhập</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Tên nhà cung cấp</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaCungCap.TenNCC)
+        </dd>
+
+        <dt>
+            <b>Tên NV</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
+        </dd>
+
+        <dt>
+            <b>Ngày nhập</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayNhap)
+        </dd>
+
+        <dt>
+            <b>Ghi chú</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChuPN)
+        </dd>
+
+        <dt>
+            <b>Số lượng</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLNhap)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

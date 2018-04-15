@@ -1,0 +1,51 @@
+﻿@model WebASP.Models.KhuyenMai
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhuyenMai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Tên KM</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKM)
+        </dd>
+
+        <dt>
+            <b>Mô tả</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaKM)
+        </dd>
+
+        <dt>
+            <b>Ngày bắt đầu</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBatDauKM)
+        </dd>
+
+        <dt>
+            <b>Thời gian</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianKM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKM }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

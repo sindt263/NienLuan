@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebASP.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebASP.Controllers.SanPhamsController sp = new WebASP.Controllers.SanPhamsController();
+}
+<link href="~/Content/css/SanPham.css" rel="stylesheet" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="checkbox"></div>
+<table class="table">
+    <tr>
+
+        <th>
+            Tên Sản Phẩm
+        </th>
+
+        <th>
+            Mô tả ngắn
+        </th>
+        <th>
+            Thời gian bảo hành
+
+        </th>
+        <th>Giá</th>
+        <th>
+            Hình ảnh
+        </th>
+        <th></th>
+    </tr>
+    <div class="checkbox">
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSP)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTaNgan)
+                </td>
+                <td>@item.TGBaoHanh Tháng</td>
+                <td>@Html.DisplayFor(modelItem => item.GiaSP.GiaSPHienTai) Đồng</td>
+                <td>
+                    <img src="@sp.FindHASP(item.SerialNumber)" class="cangiua" />
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SerialNumber }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SerialNumber }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SerialNumber })
+                </td>
+            </tr>
+        }
+    </div>
+
+</table>

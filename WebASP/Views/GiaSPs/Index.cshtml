@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebASP.Models.GiaSP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Mã giá sản phẩm</b>
+        </th>
+        <th>
+            <b>Giá sau update</b>
+        </th>
+        <th>
+            <b>Giá hiện tại</b>
+        </th>
+        <th>
+           <b>Ngày cập nhật</b>
+        </th>
+        <th>
+            <b>Ngày áp dụng</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaGiaSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaSauUpdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaSPHienTai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayApDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaGiaSP }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaGiaSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaGiaSP })
+        </td>
+    </tr>
+}
+
+</table>

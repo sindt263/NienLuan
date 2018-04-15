@@ -1,0 +1,115 @@
+﻿@model WebASP.Models.NhanVien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhanVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Loại NV</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiNV.TenLoaiNV)
+        </dd>
+
+        <dt>
+            <b>Họ tên</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNV)
+        </dd>
+
+        <dt>
+            <b>Ngày sinh</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+           <b>Quê quán</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueQuan)
+        </dd>
+
+        <dt>
+            <b>Giới tính</b>
+        </dt>
+
+        <dd>
+            @{ 
+                if(Model.GioiTinh == 1) {
+                    <b>Nam</b>}
+                else
+                {
+                    <b>Nữ</b>
+                }
+
+            }
+        </dd>
+
+        <dt>
+            <b>SĐT</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTNV)
+        </dd>
+
+        <dt>
+            <b>Ngày ký</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKyHopDong)
+        </dd>
+
+        <dt>
+            <b>Tài khoản</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+        <dt>
+            <b>Mật khẩu</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            <b>Mail</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailNV)
+        </dd>
+
+        <dt>
+            <b>Địa chỉ</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

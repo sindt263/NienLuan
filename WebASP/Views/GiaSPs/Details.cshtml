@@ -1,0 +1,51 @@
+﻿@model WebASP.Models.GiaSP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GiaSP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Giá sau update</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaSauUpdate)
+        </dd>
+
+        <dt>
+           <b>Giá hiện tại</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaSPHienTai)
+        </dd>
+
+        <dt>
+            <b>Ngày cập nhật</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            <b>Ngày áp dụng</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayApDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaGiaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,106 @@
+﻿@model WebASP.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SanPham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Giá hiện tại</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaSP.GiaSPHienTai)
+        </dd>
+
+        <dt>
+            <b>Tên KM</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhuyenMai.TenKM)
+        </dd>
+
+        <dt>
+            <b>Tên loại sản phẩm</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiSP.TenLoaiSP)
+        </dd>
+
+        <dt>
+            <b>Tên nhà sản xuất</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaSanXuat.TenNSX)
+        </dd>
+
+        <dt>
+            <b>tên nhóm sản phẩm</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhomSanPham.TenNhomSP)
+        </dd>
+
+        <dt>
+           <b>Tên sản phẩm</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            <b>còn hàng</b>
+        </dt>
+
+        <dd>
+            @if(Model.SLTonKho == 1)
+            {
+                <div>Còn hàng</div>
+            }
+            else
+            {
+                <div>Đã bán</div>
+            }
+        </dd>
+
+        <dt>
+            <b>Mô tả ngắn</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaNgan)
+        </dd>
+
+        <dt>
+            <b>Mô tả chi tiết</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaChiTiet)
+        </dd>
+
+        <dt>
+            <b>Thời gian bảo hành</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBaoHanh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SerialNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

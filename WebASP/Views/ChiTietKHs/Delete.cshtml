@@ -1,0 +1,57 @@
+﻿@model WebASP.Models.ChiTietKH
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Chi tiết khách hàng</h4>
+    <hr />
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHang.TenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.TenKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoHangDaMua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoHangDaMua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChiThuongDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiThuongDung)
+        </dd>
+
+    </dl>*@
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿@model WebASP.Models.HinhAnhSP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HinhAnhSP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+
+        <dt>
+            <b>Link</b>
+        </dt>
+        
+        <dd>
+            @Html.DisplayFor(model => model.LinkHASP)
+        </dd>
+        <dd>
+            <img src="@Model.LinkHASP" height="400px" width="400px" class="cangiua" />
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaHASP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

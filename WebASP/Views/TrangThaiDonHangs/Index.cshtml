@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebASP.Models.TrangThaiDonHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           <b>Trạng thái</b>
+        </th>
+        <th>
+            <b>Mô tả</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTaTT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaTT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaTT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaTT })
+        </td>
+    </tr>
+}
+
+</table>

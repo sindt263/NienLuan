@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebASP.Models.NhaCungCap>
+
+@{
+    ViewBag.Title = "Index";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Tên nhà cung cấp</b>
+        </th>
+        <th>
+            <b>SĐT</b>
+        </th>
+        <th>
+            <b>Địa chỉ</b>
+        </th>
+        <th>
+            <b>Ghi chú</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChuNCC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNCC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNCC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNCC })
+        </td>
+    </tr>
+}
+
+</table>

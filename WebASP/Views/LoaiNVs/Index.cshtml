@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebASP.Models.LoaiNV>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Tên loại</b>
+        </th>
+        <th>
+            <b>Mô tả</b>
+        </th>
+        <th>
+            <b>Chỉ số chức năng</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoaiNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTaLoaiNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuyenSD)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaLoaiNV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaLoaiNV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaLoaiNV })
+        </td>
+    </tr>
+}
+
+</table>

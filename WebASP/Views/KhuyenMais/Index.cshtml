@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebASP.Models.KhuyenMai>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Tên KM</b>
+        </th>
+        <th>
+            <b>Mô tả</b>
+        </th>
+        <th>
+            <b>Ngày bắt đầu</b>
+        </th>
+        <th>
+            <b>Thời gian KM (Tháng)</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTaKM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBatDauKM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGianKM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaKM }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaKM }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaKM })
+        </td>
+    </tr>
+}
+
+</table>

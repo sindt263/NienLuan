@@ -1,0 +1,35 @@
+﻿@model WebASP.Models.BaoHanh
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BaoHanh</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Hình thức bảo hành</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhThucBH)
+        </dd>
+
+        <dt>
+            <b>Mô tả</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaBH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

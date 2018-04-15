@@ -1,0 +1,18 @@
+﻿body {
+}
+
+#box-item-SP{
+    width: 400px;
+    height:400px;
+}
+#pro-item box-item-SP{
+    width:300px;
+    height:300px;
+}
+img.cangiua {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    height:300px;
+}

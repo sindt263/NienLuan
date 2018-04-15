@@ -1,0 +1,101 @@
+﻿@model IEnumerable<WebASP.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Loại NV</b>
+        </th>
+        <th>
+            <b>Họ tên</b>
+        </th>
+        <th>
+            <b>Ngày sinh</b>
+        </th>
+        <th>
+            <b>Quê quán</b>
+        </th>
+        <th>
+            <b>Giới tính</b>
+        </th>
+        <th>
+            <b>SĐT</b>
+        </th>
+        <th>
+            <b>Ngày ký</b>
+        </th>
+        <th>
+            <b>Tài khoản</b>
+        </th>
+        <th>
+            <b>Mật khẩu</b>
+        </th>
+        <th>
+           <b>Mail</b>
+        </th>
+        <th>
+            <b>Địa chỉ</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiNV.TenLoaiNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QueQuan)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.GioiTinh)*@
+            @{ 
+                if (item.GioiTinh == 1)
+                {
+            <b>Nam</b>
+                }
+                else { <b>Nữ</b>}
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKyHopDong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiNV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNV })
+        </td>
+    </tr>
+}
+
+</table>

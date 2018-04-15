@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebASP.Models.KhachHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Họ & Tên</b>
+        </th>
+        <th>
+            <b>Tài khoản</b>
+        </th>
+        <th>
+            <b>Mật khẩu</b>
+        </th>
+        <th>
+            <b>Địa chỉ</b>
+        </th>
+        <th>
+            <b>Số điện thoại</b>
+        </th>
+        <th>
+            <b>Mail</b>
+        </th>
+        <th>
+            <b>Giưới tính</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoanKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhauKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailKH)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.GioiTinhKH)*@
+            @{ 
+                if (item.GioiTinhKH == 1)
+                {
+                    <b>Nam</b>
+                }
+                else
+                {
+                    <b>Nữ</b>
+                }
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaKH }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaKH }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaKH })
+        </td>
+    </tr>
+}
+
+</table>

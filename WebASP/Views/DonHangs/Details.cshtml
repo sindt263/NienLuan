@@ -1,0 +1,71 @@
+﻿@model WebASP.Models.DonHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DonHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Cách thanh toán</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhThucThanhToan.TenHTTT)
+        </dd>
+
+        <dt>
+           <b>Tên nhân viên</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
+        </dd>
+
+        <dt>Mã khách hàng</dt>
+
+        <dd>@Html.DisplayFor(model => model.MaKH)</dd>
+        <dt>
+            <b>Trạng thái</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThaiDonHang.TenTT)
+        </dd>
+
+        <dt>
+            <b>Ngày mua</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayMua)
+        </dd>
+
+        <dt>
+            <b>Ghi chú</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChuDonHang)
+        </dd>
+
+        <dt>
+            <b>Số lượng</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongCT)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDonHang }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

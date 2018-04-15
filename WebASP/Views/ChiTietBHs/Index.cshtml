@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebASP.Models.ChiTietBH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>Loại bảo hành</b>
+        </th>
+        <th>
+            <b>Số Serial</b>
+        </th>
+        <th>
+            Mã nhân viên
+        </th>
+        
+        <th>
+            <b>Trạng thái</b>
+        </th>
+        <th>
+            <b>Ngày bảo hành</b>
+        </th>
+        <th>
+            <b>Ghi chú</b>
+        </th>
+        <th>
+            <b>Ngày trả</b>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaoHanh.HinhThucBH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SanPham.SerialNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNV)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChuBH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTra)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaCTBH }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaCTBH }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaCTBH })
+            </td>
+        </tr>
+    }
+
+</table>

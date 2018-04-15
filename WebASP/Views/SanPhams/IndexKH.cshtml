@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebASP.Models.SanPham>
+@{
+    ViewBag.Title = "IndexKH";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
+    WebASP.Controllers.SanPhamsController sp = new WebASP.Controllers.SanPhamsController();
+}
+
+
+<div class="checkbox"></div>
+<table class="table">
+
+    <div class="checkbox">
+        @WebASP.Models.Common.Alert
+        @foreach (var item in Model)
+        {
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <strong class="d-inline-block mb-2 text-primary">@item.TenSP</strong>
+                            <h3 class="mb-0">
+                                <a class="text-dark">@item.GiaSP.GiaSPHienTai đồng</a>
+                            </h3>
+                            <div class="mb-1 text-muted">Thời gian bảo hành : @item.TGBaoHanh tháng</div>
+                            <p class="card-text mb-auto">Mô tả @item.MoTaNgan</p>
+                            <h3 class="mb-0">
+                                @if (item.SLTonKho == 1)
+                                {
+                                    <a href="/DonHangs/CreateKH/@item.SerialNumber">Mua</a>
+                                }
+                                else
+                                {
+                                    <b>Sản phẩm đã được bán</b>
+                                }
+
+
+                            </h3>
+                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="@sp.FindHASP(item.SerialNumber)" data-holder-rendered="true">
+                        </div>
+                    </div>
+                </div>
+            
+        }
+    </div>
+
+</table><div class="row mb-2">

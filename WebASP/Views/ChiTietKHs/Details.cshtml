@@ -1,0 +1,51 @@
+﻿@model WebASP.Models.ChiTietKH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietKH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Tên khách hàng</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.TenKH)
+        </dd>
+
+        <dt>
+            <b>Số hàng đã mua</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoHangDaMua)
+        </dd>
+
+        <dt>
+            <b>Tổng tiền</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+           <b>Địa chỉ thường dùng</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiThuongDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKHCT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

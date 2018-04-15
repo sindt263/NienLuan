@@ -1,0 +1,35 @@
+﻿@model WebASP.Models.HinhThucThanhToan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HinhThucThanhToan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Cách thanh toán</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHTTT)
+        </dd>
+
+        <dt>
+            <b>Mô tả</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoToHTTT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaHTTT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

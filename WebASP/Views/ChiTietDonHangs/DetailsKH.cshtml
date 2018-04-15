@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebASP.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "DetailsKH";
+    Layout = "~/Views/Shared/_LayoutKH.cshtml";
+}
+
+<h2>Chi tiết đơn hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDonHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGiaCT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiGiaoHang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDonHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGiaCT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiGiaoHang)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+
+</table>

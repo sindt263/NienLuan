@@ -1,0 +1,75 @@
+﻿@model WebASP.Models.ChiTietBH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietBH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Hình thức bảo hành</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaoHanh.HinhThucBH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanPham.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.SerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GhiChuBH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChuBH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayTra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTra)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCTBH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

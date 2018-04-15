@@ -1,0 +1,70 @@
+﻿@model WebASP.Models.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhachHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Họ tên</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKH)
+        </dd>
+
+        
+        <dt>
+            <b>Địa chỉ</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTKH)
+        </dd>
+
+        <dt>
+            <b>Mail</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailKH)
+        </dd>
+
+        <dt>
+            <b>Giới tính</b>
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.GioiTinhKH)*@
+            @{
+                if (Model.GioiTinhKH == 1)
+                {
+                    <b>Nam</b>
+                }
+                else
+                {
+                    <b>Nữ</b>
+                }
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
